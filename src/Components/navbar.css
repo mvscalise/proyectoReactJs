@@ -1,0 +1,14 @@
+#navbar {
+    width: 100%;
+    background-color: #FFF3B2;
+    color: #FF9B93;
+    font-size: 18px;
+	text-decoration: none;  
+}
+
+#txtnavbar {
+    color: #FF9B93;
+    font-size: 18px;
+	text-decoration: none; 
+    margin: 10px;
+}
