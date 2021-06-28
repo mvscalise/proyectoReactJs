@@ -1,0 +1,33 @@
+#navbar {
+    width: 100%;
+    background-color: #FFF3B2;
+    color: #FF9B93;
+    font-size: 18px;
+	text-decoration: none;  
+    font-size: 30px;  
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    
+}
+
+#txtnavbar {
+    color: #FF9B93;
+    font-size: 18px;
+	text-decoration: none; 
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+.logo {
+    width: 10%;
+}
+
+#cartWidget {
+    width: 4%;
+    margin: 2%;
+}
