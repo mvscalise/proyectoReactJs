@@ -1,7 +1,7 @@
 import React from 'react'
 import './navbar.scss'
 import Logo from './logo.png'
-import CartWidget from './cupcake.png'
+import {CartWidgetComponent} from '../CartWidgetComponent.jsx'
 
 
 export function NavbarComponent () {
@@ -14,7 +14,6 @@ export function NavbarComponent () {
                     <a >Lulu's Cupcake</a>
                 </div>
 
-
                 <ul className="navbar-nav">
                     <li className="nav-item"><a  id = 'txtnavbar'>Home</a></li>
                     <li className="nav-item"><a  id = 'txtnavbar'>Nosotros</a></li>
@@ -22,7 +21,7 @@ export function NavbarComponent () {
                     <li className="nav-item"><a  id = 'txtnavbar'>Contacto</a></li>
                 </ul>
             
-                <img src={CartWidget} id = 'cartWidget' alt = 'carrito'/>
+                <CartWidgetComponent />
 
             </div>
 
