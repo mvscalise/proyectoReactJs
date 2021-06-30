@@ -1,0 +1,17 @@
+#contador {
+    color: #41584B;
+    display: flex;
+	flex-direction: row;
+	align-items: bottom;
+	padding: 10px;
+    margin-left: 1%;
+	padding: 5%;
+	button {
+        border-color: #fccca9;
+	    background-color: #fcd7ac;
+	    border-radius: 8px;
+    }
+    p{
+        margin: 1%;
+    }
+}
