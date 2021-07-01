@@ -10,13 +10,15 @@ export function ItemCountComponent ({ stock, initial }) {
     
     function validarCantidadSuma (){
         if (cantidad < stock){
-            setCantidad(cantidad+1)  
+            setCantidad(cantidad+1) 
+            console.log('Has agregado un producto')     
         }
     }
 
     function validarCantidadResta (){
-        if (cantidad > 0){
-            setCantidad(cantidad-1)  
+        if (cantidad > initial){
+            setCantidad(cantidad-1) 
+            console.log('Has eliminado un producto')  
         }
     }
 

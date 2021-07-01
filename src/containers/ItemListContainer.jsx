@@ -6,7 +6,8 @@ export function ItemListContainer({ greeting}) {
     return (
         <div>
             <h2> {greeting} </h2>
-            <ItemCountComponent stock={5} initial={2}/>
+            <ItemCountComponent stock={5} initial={1} />
+            <ItemCountComponent stock={10} initial={2}/>
         </div>
     )
 }
