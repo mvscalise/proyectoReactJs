@@ -9,7 +9,7 @@ function App() {
       <header >
       
         <NavbarComponent />
-        <ItemListContainer greeting={'Aca va el catalogo de productos'} />
+        <ItemListContainer  />
 
       </header>
     </div>

@@ -11,14 +11,14 @@ export function NavbarComponent () {
 
                 <div id = 'navbar' className="navbar-brand">
                     <img src={Logo}  alt="logo" className="logo"/> 
-                    <a >Lulu's Cupcake</a>
+                    <a >Lulu's Book Cat-ffe</a>
                 </div>
 
                 <ul className="navbar-nav">
-                    <li className="nav-item"><a  id = 'txtnavbar'>Home</a></li>
-                    <li className="nav-item"><a  id = 'txtnavbar'>Nosotros</a></li>
-                    <li className="nav-item"><a  id = 'txtnavbar'>Pedido</a></li>
-                    <li className="nav-item"><a  id = 'txtnavbar'>Contacto</a></li>
+                    <li className="nav-item"><span  id = 'txtnavbar'>Home</span></li>
+                    <li className="nav-item"><span  id = 'txtnavbar'>Nosotros</span></li>
+                    <li className="nav-item"><span  id = 'txtnavbar'>Pedido</span></li>
+                    <li className="nav-item"><span  id = 'txtnavbar'>Contacto</span></li>
                 </ul>
             
                 <CartWidgetComponent />

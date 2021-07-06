@@ -1,12 +1,8 @@
-import {useEffect, useState} from 'react'
+import {useState} from 'react'
 import './ItemCount.scss'
 
 export function ItemCountComponent ({ stock, initial }) {
-    const [cantidad, setCantidad] = useState(0);
-
-    useEffect (()=> {
-        setCantidad(initial);
-    }, [])
+    const [cantidad, setCantidad] = useState(initial);
     
     function validarCantidadSuma (){
         if (cantidad < stock){
