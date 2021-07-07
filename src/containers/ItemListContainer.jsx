@@ -9,7 +9,7 @@ export const ItemListContainer = () => {
 
     useEffect(()=>{
         async function getDataML(){
-            const response = await fetch("https://api.mercadolibre.com/sites/MLC/search?q=novelas&limit=6");
+            const response = await fetch("https://api.mercadolibre.com/sites/MLC/search?q=novelas&limit=8");
             const data = await response.json();
             setListProducts(data.results)
         }
