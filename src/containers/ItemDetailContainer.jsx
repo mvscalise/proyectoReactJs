@@ -1,22 +1,23 @@
-import React from 'react'
 import {useEffect, useState} from 'react'
+import {useParams} from 'react-router-dom'
 import {ItemDetailComponent} from '../components/ItemDetail.jsx'
 
 
 export const ItemDetailContainer= () => {
-    const [selectProduct, setSelectProduct] =useState([])
+    const {id} = useParams();
+    const [selectProduct, setSelectProduct] =useState([]);
+    
 
     useEffect(()=>{
         async function getProductML(){
-            const response = await fetch("https://api.mercadolibre.com/sites/MLC/search?q=novelas&limit=8");
+            const response = await fetch(`https://api.mercadolibre.com/items/${id}`);
             const data = await response.json();
-            const product = data.results[7];
-            setSelectProduct(product);
+            setSelectProduct(data);
         }
         
         getProductML()
 
-    }, [])
+    }, [id])
     console.log(selectProduct)
 
     return (

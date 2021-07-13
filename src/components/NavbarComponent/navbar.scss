@@ -1,33 +1,59 @@
-#navbar {
+.miNavBar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: flex-start ;
+}
+
+.titulo {
     width: 100%;
-    background-color: #FFF3B2;
-    color: #FF9B93;
-    font-size: 18px;
-	text-decoration: none;  
-    font-size: 30px;  
     display: flex;
     flex-direction: row;
-    justify-content: start;
-    align-items: center;
+    justify-content: flex-start;
     
+    a{
+        width: 20%;
+    }
+    img {
+        width: 100%;
+    }
+    h1{
+        color: #fa8278;
+        width:100%;
+        font-size: 30px;
+        align-self: center;
+    }
 }
 
-#txtnavbar {
-    color: #FF9B93;
-    font-size: 18px;
-	text-decoration: none; 
-    margin: 10px;
+#navegacion {
+    display: flex;
+ 	flex-direction: row;
+	justify-content: flex-end;
+	margin: 0px;
+    height: 30%;
+    margin-bottom: 50px;
+		span {
+			color: #FF9B93;
+			font-size: 16px;
+			font-weight: bold;
+			text-decoration: none;
+            margin-top: 2px;
+            padding: 5px;
+		}
+        img {
+            width: 30%;
+            align-self: flex-end;
+        }
+}
+
+#cartWidget{
     display: flex;
     flex-direction: row;
-    justify-content: start;
-    align-items: center;
+    justify-content: flex-end;
 }
 
-.logo {
-    width: 10%;
-}
-
-#cartWidget {
-    width: 10%;
-    padding: 0%;
+@media (max-width: 780px) {
+	#cartWidget{
+		width: 200px;
+	}
 }

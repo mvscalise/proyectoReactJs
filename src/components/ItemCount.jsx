@@ -8,6 +8,8 @@ export function ItemCountComponent ({ stock, initial }) {
         if (cantidad < stock){
             setCantidad(cantidad+1) 
             console.log('Has agregado un producto')     
+        }else{
+            console.log('no hay stock')
         }
     }
 
