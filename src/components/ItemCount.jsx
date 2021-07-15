@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import './ItemCount.scss'
 
-export function ItemCountComponent ({ stock, initial }) {
+export function ItemCountComponent ({ stock, initial, addToCart}) {
     const [cantidad, setCantidad] = useState(initial);
     
     function validarCantidadSuma (){
@@ -24,7 +24,9 @@ export function ItemCountComponent ({ stock, initial }) {
         <section id= 'contador'>
             <button onClick={() => {validarCantidadResta()}}>-</button>
             <p> {cantidad} </p>
-            <button onClick={() => {validarCantidadSuma()}}>+</button>
+            <button onClick={() => {validarCantidadSuma()
+                                    addToCart()}}
+                                    >+</button>
         </section>
     )
 }
