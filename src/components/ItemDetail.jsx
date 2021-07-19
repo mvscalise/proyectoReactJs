@@ -6,22 +6,31 @@ import './ItemDetail.scss'
 
 export const ItemDetailComponent = ({producto}) => {
    const [cart, setCart] = useState([])
-   const [isAdded, setIsAdded] = useState(false)
+   //const [isAdded, setIsAdded] = useState(false)
 
-   function addToCart(product){
-        setCart([...cart, product])
-        setIsAdded(true);
+   console.log(producto)
+   function addToCart(){
+        setCart([...cart, producto])
+        console.log(cart)
+        //setIsAdded(true);
    }
+
+  
     
     return(
         
         <section className="detalle">
             <h2> {producto.title}  </h2>
             <img src={producto.thumbnail} alt='imagenDeProducto'/>
+            
             <p> CLP $ {producto.price}</p>
-            <p> Tienes {cart.length} libro agregado </p>
+            
             <div className="contador">
-                {isAdded ? <Link to={`/cart`} style={{ textDecoration: 'none' }}> <button> Terminar Compra </button> </Link> : <ItemCountComponent stock={producto.available_quantity} initial={0} addToCart={addToCart}/>}
+                 <ItemCountComponent stock={producto.available_quantity} initial={0} addToCart={addToCart}/>
+                 
+            </div>
+            <div>
+                <Link to={`/cart`} style={{ textDecoration: 'none' }}> <button> Terminar Compra </button> </Link>
             </div>
         </section> 
     )

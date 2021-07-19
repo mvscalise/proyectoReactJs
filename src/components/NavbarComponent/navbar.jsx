@@ -24,10 +24,10 @@ export function NavbarComponent () {
                         <Link to={"/"} style={{ textDecoration: 'none' }} > <span> Home</span> </Link>
 					</div>
 					<div className="col-sm-6 col-md-6 col-lg-2">
-                        <Link to={"/category/cuentos_infantiles"} style={{ textDecoration: 'none' }} > <span> Kids</span> </Link>
+                        <Link to={"/category/individual"} style={{ textDecoration: 'none' }} > <span> Porciones</span> </Link>
 					</div>
 					<div className="col-sm-6 col-md-6 col-lg-2">
-                        <Link to={"/category/novelas"} style={{ textDecoration: 'none' }} > <span> Novelas</span> </Link>
+                        <Link to={"/category/caja"} style={{ textDecoration: 'none' }} > <span> Cajas</span> </Link>
 					</div>
 					<div className="col-sm-6 col-md-6 col-lg-2">
                         <span>Contacto</span>

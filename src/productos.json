@@ -1,0 +1,122 @@
+[
+      {
+        "title": "Chocochips",
+        "id": "1",
+        "categoria": "individual",
+        "price": 500,
+        "descripcion": "Choco-chips",
+        "url": "multimedia/brownie.png",
+        "available_quantity": "100",
+        "cantidad": 0
+      },
+      {
+        "title": "Brownie",
+        "id": "2",
+        "categoria": "individual",
+        "price": 700,
+        "descripcion": "Brownie",
+        "url": "multimedia/brownie.png",
+        "available_quantity": "100",
+        "cantidad": 0
+      },
+      {
+        "title": "Limon",
+        "id": "3",
+        "categoria": "individual",
+        "price": 450,
+        "descripcion": "Limón",
+        "url": "multimedia/limon.png",
+        "available_quantity": 100,
+        "cantidad": 0
+      },
+      {
+        "title": "Zanahoria",
+        "id": "4",
+        "categoria": "individual",
+        "price": 450,
+        "descripcion": "Zanahoria",
+        "url": "multimedia/carrot.png",
+        "available_quantity": 100,
+        "cantidad": 0
+      },
+      {
+        "title": "Oreo",
+        "id": "5",
+        "categoria": "individual",
+        "price": 500,
+        "descripcion": "Oreo",
+        "url": "multimedia/oreo.png",
+        "available_quantity": 100,
+        "cantidad": 0
+      },
+      {
+        "title": "Red Vetvet",
+        "id": "6",
+        "categoria": "individual",
+        "price": 650,
+        "descripcion": "Red velvet",
+        "url": "multimedia/red.png",
+        "available_quantity": 100,
+        "cantidad": 0
+      },
+      {
+        "title": "Caja Chocochips",
+        "id": "7",
+        "categoria": "caja",
+        "price": 5000,
+        "descripcion": "Choco-chips",
+        "url": "multimedia/choco.png",
+        "available_quantity": 100,
+        "cantidad": 0
+      },
+      {
+        "title": "Caja Brownie",
+        "id": "8",
+        "categoria": "caja",
+        "price": 7000,
+        "descripcion": "Brownie",
+        "url": "multimedia/brownie.png",
+        "available_quantity": 100,
+        "cantidad": 0
+      },
+      {
+        "title": "Caja Limon",
+        "id": "9",
+        "categoria": "caja",
+        "price": 4500,
+        "descripcion": "Limón",
+        "url": "multimedia/limon.png",
+        "available_quantity": 100,
+        "cantidad": 0
+      },
+      {
+        "title": "Caja Zanahoria",
+        "id": "10",
+        "categoria": "caja",
+        "price": 4500,
+        "descripcion": "Zanahoria",
+        "url": "multimedia/carrot.png",
+        "available_quantity": 100,
+        "cantidad": 0
+      },
+      {
+        "title": "Caja Oreo",
+        "id": "11",
+        "categoria": "caja",
+        "price": 5000,
+        "descripcion": "Oreo",
+        "url": "multimedia/oreo.png",
+        "available_quantity": 100,
+        "cantidad": 0
+      },
+      {
+        "title": "Caja Red Velvet",
+        "id": "12",
+        "categoria": "caja",
+        "price": 6500,
+        "descripcion": "Red velvet",
+        "url": "multimedia/red.png",
+        "available_quantity": 100,
+        "cantidad": 0
+      }
+]

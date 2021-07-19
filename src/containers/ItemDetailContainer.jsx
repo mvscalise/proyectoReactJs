@@ -1,23 +1,24 @@
-import {useEffect, useState} from 'react'
-import {useParams} from 'react-router-dom'
+import {useContext, useEffect, useState} from 'react'
 import {ItemDetailComponent} from '../components/ItemDetail.jsx'
-
+import {useParams} from 'react-router-dom'
+import {CartContext} from '../context/ShopContext'
 
 export const ItemDetailContainer= () => {
-    const {id} = useParams();
+       
+
+    const CONTEXT = useContext (CartContext)
     const [selectProduct, setSelectProduct] =useState([]);
+    const {id} = useParams();
     
 
     useEffect(()=>{
-        async function getProductML(){
-            const response = await fetch(`https://api.mercadolibre.com/items/${id}`);
-            const data = await response.json();
-            setSelectProduct(data);
-        }
-        
-        getProductML()
+        if(id){
+            let aux = CONTEXT.listProducts;
+            const seleccion = aux.find(producto => producto.id === id)
+            setSelectProduct(seleccion);
+        } 
+    },[id])
 
-    }, [id])
     console.log(selectProduct)
 
     return (

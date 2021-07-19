@@ -25,8 +25,7 @@ export function ItemCountComponent ({ stock, initial, addToCart}) {
             <button onClick={() => {validarCantidadResta()}}>-</button>
             <p> {cantidad} </p>
             <button onClick={() => {validarCantidadSuma()
-                                    addToCart()}}
-                                    >+</button>
+                                   addToCart()}}>+</button>
         </section>
     )
 }

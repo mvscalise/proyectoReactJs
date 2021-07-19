@@ -3,6 +3,8 @@ import './Item.scss'
 
 
 export const ItemComponent = ({id, name, precio, img, stock}) => {
+
+    
     return(
         
         <div className ="card" >
