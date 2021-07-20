@@ -17,7 +17,7 @@ export const ItemListContainer = () => {
         }else {
             setShow(CONTEXT.listProducts);
         }
-    },[id])
+    },[id,CONTEXT.listProducts])
 
 
     return (

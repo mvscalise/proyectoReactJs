@@ -1,8 +1,11 @@
-import {useState} from 'react'
+import {useState, useContext} from 'react'
 import './ItemCount.scss'
+import {CartContext} from '../context/ShopContext'
 
-export function ItemCountComponent ({ stock, initial, addToCart}) {
+export function ItemCountComponent ({ stock, initial, id}) {
     const [cantidad, setCantidad] = useState(initial);
+    const { addToCart } = useContext(CartContext);
+
     
     function validarCantidadSuma (){
         if (cantidad < stock){
@@ -20,12 +23,25 @@ export function ItemCountComponent ({ stock, initial, addToCart}) {
         }
     }
 
+    function agregar (){
+        if(cantidad > 0){
+            addToCart( cantidad, id)
+        } else {
+            console.log ('no has seleccionado cantidad')
+        }
+
+    }
+
+
+  
     return (
         <section id= 'contador'>
             <button onClick={() => {validarCantidadResta()}}>-</button>
             <p> {cantidad} </p>
-            <button onClick={() => {validarCantidadSuma()
-                                   addToCart()}}>+</button>
+            <button onClick={() => {validarCantidadSuma()}}>+</button>
+
+            <button onClick={() => {agregar()}}>Agregar al Carrito</button>
+
         </section>
     )
 }

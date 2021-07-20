@@ -5,15 +5,8 @@ import './ItemDetail.scss'
 
 
 export const ItemDetailComponent = ({producto}) => {
-   const [cart, setCart] = useState([])
-   //const [isAdded, setIsAdded] = useState(false)
-
-   console.log(producto)
-   function addToCart(){
-        setCart([...cart, producto])
-        console.log(cart)
-        //setIsAdded(true);
-   }
+   
+   
 
   
     
@@ -26,7 +19,7 @@ export const ItemDetailComponent = ({producto}) => {
             <p> CLP $ {producto.price}</p>
             
             <div className="contador">
-                 <ItemCountComponent stock={producto.available_quantity} initial={0} addToCart={addToCart}/>
+                 <ItemCountComponent stock={producto.available_quantity} initial={0} item={producto} id={producto.id}/>
                  
             </div>
             <div>

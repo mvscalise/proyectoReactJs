@@ -17,9 +17,8 @@ export const ItemDetailContainer= () => {
             const seleccion = aux.find(producto => producto.id === id)
             setSelectProduct(seleccion);
         } 
-    },[id])
+    },[id, CONTEXT.listProducts])
 
-    console.log(selectProduct)
 
     return (
         <div>
