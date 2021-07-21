@@ -6,8 +6,6 @@ import './ItemDetail.scss'
 
 export const ItemDetailComponent = ({producto}) => {
    
-   
-
   
     
     return(
@@ -19,7 +17,7 @@ export const ItemDetailComponent = ({producto}) => {
             <p> CLP $ {producto.price}</p>
             
             <div className="contador">
-                 <ItemCountComponent stock={producto.available_quantity} initial={0} item={producto} id={producto.id}/>
+                 <ItemCountComponent stock={producto.available_quantity} initial={0} item={producto} producto={producto}/>
                  
             </div>
             <div>

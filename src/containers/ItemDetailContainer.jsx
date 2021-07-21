@@ -22,7 +22,7 @@ export const ItemDetailContainer= () => {
 
     return (
         <div>
-            <ItemDetailComponent producto={selectProduct} />
+            { selectProduct ? <ItemDetailComponent producto={selectProduct} /> : <h2>loading</h2> }
         </div>
     )
 }
