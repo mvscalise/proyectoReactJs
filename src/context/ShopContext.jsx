@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+//import { getFirestore } from "../firebase";
 import productos from '../productos.json';
 
 
@@ -20,52 +21,59 @@ export const CartProvider = ({ children }) => {
     
     },[])
 
-    function isInCart (id){
-        const aux = cart.find(p => p.id === id)
-        console.log(aux)
-        console.log(cart)
-        if (aux === undefined){
+    //useEffect(()=> {
+    //    async function getDataFromFirestore (){
+    //        const DB = getFirestore();
+    //        const COLLECTION = DB.collection('productos');
+    //        const response = await COLLECTION.get();
+    //        const aux = response.docs.map(element => {
+    //            return {id: element.id, ... element.data()}
+    //        })
+    //        setListProducts(aux)
+    //    } 
+    //    getDataFromFirestore();
+    //    console.log (listProducts)
+
+
+
+    //}, [])
+
+
+    function isInCart(id){
+        const item = cart.find(p => p.id === id)
+        if (item === undefined){
             return false
-        }else {
+        }
+        else {
             return true
         }
     }
 
-    function addToCart(cantidad, id) {
+    function addToCart( producto, cantidad, id) {
 
         if (isInCart (id)){
-            const findProduct = cart.find(e => parseInt(e.id) === id)
-            console.log(id)
-            console.log(findProduct)
+            const findProduct = cart.find(e => e.id === id)
             findProduct.cantidad = findProduct.cantidad + cantidad
             const newCart = cart.filter(e => e.id !== id)
-            console.log(newCart)
-            setCart([...newCart, findProduct])     
+            const aux = [...newCart, findProduct]
+            console.log(aux)
+            setCart(aux)     
             console.log(cart) 
         } else {
-            const producto = listProducts.find(e => parseInt(e.id) == id)
-            console.log(producto)
-            producto.cantidad = producto.cantidad + cantidad
-            console.log(producto)
-            console.log(cart)
-            setCart([...cart, producto]) 
+            const nuevoProducto = { id: producto.id, title: producto.title, categoria: producto.categoria, price: producto.price,
+            descripcion: producto.descripcion, url: producto.url, available_quantity: producto.available_quantity, cantidad: producto.cantidad = cantidad}
+            const aux = [...cart, nuevoProducto]
+            console.log(aux)
+            setCart(aux) 
             console.log(cart) 
-        }
+        }    
     }
+    
 
     function removeFromCart (id){
-
-        if (isInCart(id)){
-            console.log(cart)
-            const findProduct = cart.find(e => e.id === id) 
-            console.log(findProduct)
-            findProduct.cantidad = 0
-            const newCart = cart.filter(e => e.id !== id)
-            console.log(cart) 
-            setCart([newCart])    
-            console.log(cart) 
-        }
-
+        const newCart = cart.filter(product => product.id !== id)
+        setCart(newCart)
+        console.log(cart)
     }
 
 

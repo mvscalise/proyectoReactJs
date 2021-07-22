@@ -1,17 +1,40 @@
 #contador {
     color: #41584B;
     display: flex;
-	flex-direction: row;
-	align-items: bottom;
+	flex-direction: column;
+	align-items: bottom;	
+}
 
-	button {
+.cantidad {
+    display: flex;
+	flex-direction: row;
+    justify-content: center;
+    button {
         border-color: #fccca9;
-	    background-color: #fcd7ac;
-	    border-radius: 8px;
+        background-color: #fcd7ac;
+        border-radius: 8px;
         margin-left: 10%;
         margin-right: 5%;
+        margin-bottom: 10%;
     }
     p{
         margin: 1%;
     }
 }
+
+.cart{
+    display: flex;
+	flex-direction: row;
+    justify-content: start;
+    button {
+        border-color: #fccca9;
+        background-color: #fcd7ac;
+        border-radius: 8px;
+        margin-left: 10%;
+        margin-right: 5%;
+        margin-bottom: 10%;
+    }
+}
+    
+
+

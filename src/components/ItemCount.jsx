@@ -7,9 +7,8 @@ export function ItemCountComponent ({ stock, initial, producto}) {
     const { addToCart } = useContext(CartContext);
     const { removeFromCart } = useContext(CartContext);
 
-    const id = parseInt(producto.id);
-    console.log(id)
-    
+    const id = producto.id;
+
     function validarCantidadSuma (){
         if (cantidad < stock){
             setCantidad(cantidad+1) 
@@ -28,7 +27,7 @@ export function ItemCountComponent ({ stock, initial, producto}) {
 
     function agregar (){
         if(cantidad > 0){
-            addToCart( cantidad, id)
+            addToCart( producto, cantidad, id)
         } else {
             console.log ('no has seleccionado cantidad')
         }
@@ -42,10 +41,12 @@ export function ItemCountComponent ({ stock, initial, producto}) {
   
     return (
         <section id= 'contador'>
-            <button onClick={() => {validarCantidadResta()}}>-</button>
-            <p> {cantidad} </p>
-            <button onClick={() => {validarCantidadSuma()}}>+</button>
-            <div>
+            <div className="cantidad">
+                <button onClick={() => {validarCantidadResta()}}>-</button>
+                    <p> {cantidad} </p>
+                <button onClick={() => {validarCantidadSuma()}}>+</button>
+            </div>
+            <div className="cart">
                 <button onClick={() => {agregar()}}>Agregar al Carrito</button>
                 <button onClick={() => {eliminar()}}> Eliminar producto </button>
             </div>

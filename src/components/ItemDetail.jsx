@@ -20,8 +20,8 @@ export const ItemDetailComponent = ({producto}) => {
                  <ItemCountComponent stock={producto.available_quantity} initial={0} item={producto} producto={producto}/>
                  
             </div>
-            <div>
-                <Link to={`/cart`} style={{ textDecoration: 'none' }}> <button> Terminar Compra </button> </Link>
+            <div className="boton">
+                <Link to={`/cart`} style={{ textDecoration: 'none' }}> <button > Terminar Compra </button> </Link>
             </div>
         </section> 
     )

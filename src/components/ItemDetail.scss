@@ -4,8 +4,9 @@
     height: 300px;
     grid-template-areas: " img   titulo"
                          " img   precio"
-                         " img   contador";
-    grid-template-rows: 40% 30% 30%;
+                         " img   contador"
+                         " boton contador";
+    grid-template-rows: 30% 30% 30% 10%;
     grid-template-columns: 60% 30%;     
     align-items: center; 
     justify-items: center;              
@@ -19,11 +20,11 @@
     }
     h2 {
         grid-area: titulo;
-        justify-self: start;
+        justify-self: center;
     }
     p {
         grid-area: precio;
-        justify-self: start;
+        justify-self: center;
     }
 }
 
@@ -34,5 +35,19 @@
     justify-content: center;
     justify-self: start;
     align-self: start;
+}
+
+.boton {
+    grid-area: boton;
+    button{
+        border-color: #fccca9;
+        background-color: #fcd7ac;
+        border-radius: 8px;
+        width: 100%;
+        margin-left: 10%;
+        margin-right: 5%;
+        margin-bottom: 10%;
+    }
+    
 }
 
