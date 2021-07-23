@@ -24,6 +24,10 @@ export function ItemCountComponent ({ stock, initial, producto}) {
         }
     }
 
+    function restar () {
+        removeFromCart(id)
+        setCantidad(0) 
+    }
  
     return (
         <section id= 'contador'>
@@ -34,7 +38,7 @@ export function ItemCountComponent ({ stock, initial, producto}) {
             </div>
             <div className="cartCount">
                 <button onClick={() => {addToCart( producto, cantidad, id)}}>Agregar al Carrito</button>
-                <button onClick={() => {removeFromCart(id)}}> Eliminar producto </button>
+                <button onClick={() => {restar()}}> Eliminar producto </button>
             </div>
             
 

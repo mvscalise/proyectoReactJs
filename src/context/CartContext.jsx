@@ -21,7 +21,6 @@ export const CartProvider = ({ children }) => {
         });
 
         promesa.then(result => {setListProducts(result)})
-    
     },[])
 
     //useEffect(()=> {
@@ -64,7 +63,6 @@ export const CartProvider = ({ children }) => {
             console.log(aux)
             setCart(aux)     
             console.log(cart) 
-            getTotalPrice ()
         } else {
             const nuevoProducto = { id: producto.id, title: producto.title, categoria: producto.categoria, price: producto.price,
             descripcion: producto.descripcion, url: producto.url, available_quantity: producto.available_quantity, cantidad: producto.cantidad = cantidad}
@@ -72,8 +70,10 @@ export const CartProvider = ({ children }) => {
             console.log(aux)
             setCart(aux) 
             console.log(cart) 
-            getTotalPrice ()
         }    
+
+        getTotalPrice ()
+        getTotalQ()
         
     }
     
@@ -83,29 +83,26 @@ export const CartProvider = ({ children }) => {
         setCart(newCart)
         console.log(cart)
         getTotalPrice ()
+        getTotalQ()
     }
 
     function clearCart (){
         setCart([])
         getTotalPrice (0)
+        getTotalQ(0)
     }
     
     function getTotalPrice (){
         
-        let costoDelPedido = 0
-
-        cart.forEach(element =>
-            costoDelPedido =+ element.price * element.cantidad)
+        const costoDelPedido = cart.reduce((prev, next) => prev + (next.price*next.cantidad), 0);
         
         console.log(costoDelPedido)
         setTotalPrice(costoDelPedido)
     }
 
     function getTotalQ() {
-              let total = cart.reduce((acc, cur) => {
-                return cur.quantity + acc
-            }, 0);
-            setTotalQty(total);
+        const cantidadTotal = cart.reduce((prev, next) => prev + next.cantidad, 0);
+        setTotalQty(cantidadTotal);
     }
 
  
