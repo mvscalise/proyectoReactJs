@@ -5,7 +5,7 @@ import {NavbarComponent} from './components/NavbarComponent/Navbar.jsx';
 import {ItemListContainer} from './containers/ItemListContainer.jsx';
 import {ItemDetailContainer} from './containers/ItemDetailContainer.jsx';
 import {CartComponent} from './components/CartComponent.jsx';
-import {CartProvider} from './context/ShopContext';
+import {CartProvider} from './context/CartContext';
 
 function App() {
 

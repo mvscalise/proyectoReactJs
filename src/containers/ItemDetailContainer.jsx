@@ -1,7 +1,7 @@
 import {useContext, useEffect, useState} from 'react'
 import {ItemDetailComponent} from '../components/ItemDetail.jsx'
 import {useParams} from 'react-router-dom'
-import {CartContext} from '../context/ShopContext'
+import {CartContext} from '../context/CartContext'
 
 export const ItemDetailContainer= () => {
        

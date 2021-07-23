@@ -1,50 +1,108 @@
 import { createContext, useEffect, useState } from "react";
-//import productos from '../productos.json';
-//import { useParams } from "react-router";
+//import { getFirestore } from "../firebase";
+import productos from '../productos.json';
 
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
 
-    //const [listProducts, setListProducts] = useState([]);
+    const [listProducts, setListProducts] =useState([]);
+    const [cart, setCart] = useState([])
+    const [totalPrice, setTotalPrice] = useState(0);
 
-    //useEffect(() => {
-    //  const promesa = new Promise((resolve, reject) => {
-    //        setTimeout(function () {
-    //            resolve(productos);
-    //        }, 2000);
-    //    });
 
-    //    promesa.then(result => {setListProducts(result)})
-    //    console.log(listProducts);
-    //    
-    //},[])
+    useEffect(() => {
+        const promesa = new Promise((resolve, reject) => {
+            setTimeout(function () {
+            resolve(productos);
+        }, 500);
+        });
+
+        promesa.then(result => {setListProducts(result)})
+    
+    },[])
+
+    //useEffect(()=> {
+    //    async function getDataFromFirestore (){
+    //        const DB = getFirestore();
+    //        const COLLECTION = DB.collection('productos');
+    //        const response = await COLLECTION.get();
+    //        const aux = response.docs.map(element => {
+    //            return {id: element.id, ... element.data()}
+    //        })
+    //        setListProducts(aux)
+    //    } 
+    //    getDataFromFirestore();
+    //    console.log (listProducts)
+
+
+
+    //}, [])
+
+
+
+    function isInCart(id){
+        const item = cart.find(p => p.id === id)
+        if (item === undefined){
+            return false
+        }
+        else {
+            return true
+        }
+    }
+
+    function addToCart( producto, cantidad, id) {
+     
+
+         if (isInCart (id)){
+            const findProduct = cart.find(e => e.id === id)
+            findProduct.cantidad = findProduct.cantidad + cantidad
+            const newCart = cart.filter(e => e.id !== id)
+            const aux = [...newCart, findProduct]
+            console.log(aux)
+            setCart(aux)     
+            console.log(cart) 
+            getTotalPrice ()
+        } else {
+            const nuevoProducto = { id: producto.id, title: producto.title, categoria: producto.categoria, price: producto.price,
+            descripcion: producto.descripcion, url: producto.url, available_quantity: producto.available_quantity, cantidad: producto.cantidad = cantidad}
+            const aux = [...cart, nuevoProducto]
+            console.log(aux)
+            setCart(aux) 
+            console.log(cart) 
+            getTotalPrice ()
+        }    
+        
+    }
+    
+
+    function removeFromCart (id){
+        const newCart = cart.filter(product => product.id !== id)
+        setCart(newCart)
+        console.log(cart)
+        getTotalPrice ()
+    }
+
+    function clearCart (){
+        setCart([])
+        getTotalPrice (0)
+    }
+    
+    function getTotalPrice (){
+        
+        let costoDelPedido = 0
+
+        cart.forEach(element =>
+            costoDelPedido =+ element.price * element.cantidad)
+        
+        console.log(costoDelPedido)
+        setTotalPrice(costoDelPedido)
+    }
+
  
 
-    const [listProducts, setListProducts] =useState([]); 
-    console.log(listProducts)
-
-    //useEffect(()=>{
-
-    //    async function getDataML(){
-    //        const response = await fetch(`https://api.mercadolibre.com/sites/MLC/search?q=novelas&limit=8`);
-    //        const data = await response.json();
-    //        setListProducts(data.results);
-    //        
-    //    }
-
-    //    getDataML()
-
-    //})
-
-    useEffect (()=>{
-        console.log('hola')
-    })
-
-    console.log(listProducts)
-
-    return <CartContext.Provider value={{ listProducts, setListProducts}}>
+    return <CartContext.Provider value={{listProducts, cart,  clearCart, setListProducts, addToCart, removeFromCart}} >
         {children}
-    </CartContext.Provider>;
+    </CartContext.Provider>
 }
