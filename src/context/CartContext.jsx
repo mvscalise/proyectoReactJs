@@ -10,6 +10,7 @@ export const CartProvider = ({ children }) => {
     const [listProducts, setListProducts] =useState([]);
     const [cart, setCart] = useState([])
     const [totalPrice, setTotalPrice] = useState(0);
+    const [totalQty, setTotalQty ] = useState(0)
 
 
     useEffect(() => {
@@ -100,9 +101,16 @@ export const CartProvider = ({ children }) => {
         setTotalPrice(costoDelPedido)
     }
 
+    function getTotalQ() {
+              let total = cart.reduce((acc, cur) => {
+                return cur.quantity + acc
+            }, 0);
+            setTotalQty(total);
+    }
+
  
 
-    return <CartContext.Provider value={{listProducts, cart,  clearCart, setListProducts, addToCart, removeFromCart}} >
+    return <CartContext.Provider value={{listProducts, cart, totalPrice, totalQty,  clearCart, setListProducts, addToCart, removeFromCart}} >
         {children}
     </CartContext.Provider>
 }
