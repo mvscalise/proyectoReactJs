@@ -20,7 +20,12 @@ export const CartProvider = ({ children }) => {
         }, 500);
         });
 
-        promesa.then(result => {setListProducts(result)})
+        promesa.then(result => {setListProducts(result)});
+        
+
+        getTotalPrice ()
+        getTotalQ()
+
     },[])
 
     //useEffect(()=> {
@@ -52,16 +57,18 @@ export const CartProvider = ({ children }) => {
         }
     }
 
-    function addToCart( producto, cantidad, id) {
-     
+    function addToCart( producto, cantidad, id,e) {
+
 
          if (isInCart (id)){
-            const findProduct = cart.find(e => e.id === id)
-            findProduct.cantidad = findProduct.cantidad + cantidad
-            const newCart = cart.filter(e => e.id !== id)
-            const aux = [...newCart, findProduct]
-            console.log(aux)
-            setCart(aux)     
+
+            const findProduct = cart.findIndex(e => e.id === id)
+            cart[findProduct].cantidad = cart[findProduct].cantidad + cantidad
+            //const newCart = cart.filter(e => e.id !== id)
+            //const aux = [...newCart, findProduct]
+            //console.log(aux)
+            //setCart(aux)   
+            setCart(cart)  
             console.log(cart) 
         } else {
             const nuevoProducto = { id: producto.id, title: producto.title, categoria: producto.categoria, price: producto.price,
@@ -72,8 +79,8 @@ export const CartProvider = ({ children }) => {
             console.log(cart) 
         }    
 
-        getTotalPrice ()
-        getTotalQ()
+        getTotalPrice ();
+        getTotalQ();
         
     }
     

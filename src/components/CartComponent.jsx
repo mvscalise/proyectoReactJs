@@ -25,7 +25,7 @@ export function CartComponent () {
                     )
                 })) }
             <div>
-                <h2> {totalPrice}</h2>
+                <h2> CLP $ {totalPrice}</h2>
             </div>
             <div>
                 <button onClick={() => {clearCart()}}> Vaciar carrito </button> 

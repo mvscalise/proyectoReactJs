@@ -9,19 +9,21 @@ export const CartItem = ({producto}) => {
     const [cantidad, setCantidad] = useState(producto.cantidad);
  
     function validarSuma(){
-        let suma = cantidad + 1
-        if (suma < producto.available_quantity){
+        let suma = 1
+        let aux = cantidad + 1
+        if (aux < producto.available_quantity){
             addToCart(producto, suma , producto.id)
-            setCantidad(suma)
+            setCantidad(cantidad + 1)
         }
     }
 
     function validarResta(){
         console.log(producto.cantidad)
-        let resta = cantidad - 1
-        if (resta > 0){
+        let resta = - 1
+        let aux = cantidad + resta
+        if (aux > 0){
             addToCart(producto, resta , producto.id)
-            setCantidad(resta)
+            setCantidad(cantidad - 1)
         }else{
             removeFromCart(producto.id)
             setCantidad(0)

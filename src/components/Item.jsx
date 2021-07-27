@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom'
 import './Item.scss'
 
 
-export const ItemComponent = ({id, name, precio, img, stock}) => {
+export const ItemComponent = ({id, name, precio, img }) => {
 
     
     return(
