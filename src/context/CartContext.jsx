@@ -1,6 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-//import { getFirestore } from "../firebase";
-import productos from '../productos.json';
+import { getFirestore } from "../firebase";
 
 
 export const CartContext = createContext();
@@ -13,37 +12,40 @@ export const CartProvider = ({ children }) => {
     const [totalQty, setTotalQty ] = useState(0)
 
 
-    useEffect(() => {
-        const promesa = new Promise((resolve, reject) => {
-            setTimeout(function () {
-            resolve(productos);
-        }, 500);
-        });
+    //useEffect(() => {
+    //    const promesa = new Promise((resolve, reject) => {
+    //        setTimeout(function () {
+    //        resolve(productos);
+    //        }, 500);
+    //    });
 
-        promesa.then(result => {setListProducts(result)});
+    //    promesa.then(result => {setListProducts(result)});
         
 
-        getTotalPrice ()
-        getTotalQ()
+    //    getTotalPrice ()
+    //    getTotalQ()
 
-    },[])
+        
 
-    //useEffect(()=> {
-    //    async function getDataFromFirestore (){
-    //        const DB = getFirestore();
-    //        const COLLECTION = DB.collection('productos');
-    //        const response = await COLLECTION.get();
-    //        const aux = response.docs.map(element => {
-    //            return {id: element.id, ... element.data()}
-    //        })
-    //        setListProducts(aux)
-    //    } 
-    //    getDataFromFirestore();
-    //    console.log (listProducts)
+    //},[])
+
+    
+    useEffect(()=> {
+        async function getDataFromFirestore (){
+            const DB = getFirestore();
+            const COLLECTION = DB.collection('misProductos');
+            const response = await COLLECTION.get();
+            const aux = response.docs.map(element => {
+                return {id: element.id, ... element.data()}
+            })
+            setListProducts(aux)
+        } 
+        getDataFromFirestore();
+        console.log (listProducts)
 
 
 
-    //}, [])
+    }, [])
 
 
 
