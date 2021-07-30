@@ -49,6 +49,7 @@ export const CartProvider = ({ children }) => {
 
 
 
+
     function isInCart(id){
         const item = cart.find(p => p.id === id)
         if (item === undefined){
@@ -114,7 +115,10 @@ export const CartProvider = ({ children }) => {
         setTotalQty(cantidadTotal);
     }
 
- 
+    useEffect(() => {
+        getTotalPrice ();
+        getTotalQ();
+    }, [cart])
 
     return <CartContext.Provider value={{listProducts, cart, totalPrice, totalQty,  clearCart, setListProducts, addToCart, removeFromCart}} >
         {children}
