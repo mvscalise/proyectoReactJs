@@ -11,7 +11,7 @@ export const ItemDetailComponent = ({producto}) => {
         
         <section className="detalle">
             <h2> {producto.title}  </h2>
-            <img src={producto.thumbnail} alt='imagenDeProducto'/>
+            <img src={producto.url} alt='imagenDeProducto'/>
             
             <p> CLP $ {producto.price}</p>
             

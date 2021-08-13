@@ -1,9 +1,55 @@
-.cart{
+.finalizarPedido{
     display: flex;
     flex-direction: column;
-    justify-content: start ;
-    flex-wrap: nowrap;
-    img{
-        width: 30%;
+    h2{
+        align-self: center;
+        font-size: 18px;
+        color: #fa8278;
     }
+    p{
+        align-self: center;
+    }
+}
+
+.elegirPedido{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #FF9B93;
+    border-radius: 10px;
+    padding: 5px;
+    font-weight: bold;
+    color:#41584B;
+}
+
+.vaciar{
+    align-self: flex-end;
+    font-size: 18px;
+    background-color: #FF9A00;
+    border-radius: 10px;
+    padding: 5px;
+    font-weight: bold;
+    color: #41584B;
+    border-color: #FFF3B2;
+}
+
+.whatsApp{
+    align-self: flex-end;
+    font-size: 18px;
+    background-color: #FF9A00;
+    border-radius: 10px;
+    padding: 5px;
+    font-weight: bold;
+    border-color: #FFF3B2;
+    color: #41584B;
+}
+
+
+
+.boton{
+    font-size: 18px;
+    border-radius: 10px;
+    padding: 5px;
+    border-color: #fccca9;
+    color: #41584B;
 }

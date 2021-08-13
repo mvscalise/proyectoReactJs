@@ -30,7 +30,7 @@ export function NavbarComponent () {
                         <Link to={"/category/caja"} style={{ textDecoration: 'none' }} > <span> Cajas</span> </Link>
 					</div>
 					<div className="col-sm-6 col-md-6 col-lg-2">
-                        <span>Contacto</span>
+                        <Link to={"/cart"} style={{ textDecoration: 'none' }} > <span> Ver Carrito </span> </Link>
 					</div>
 
                     <CartWidgetComponent />

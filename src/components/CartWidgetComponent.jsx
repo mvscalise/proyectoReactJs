@@ -1,6 +1,7 @@
 import CartWidget from './cupcake.png'
 import {useContext} from 'react'
 import {CartContext} from '../context/CartContext'
+import './CartWidgetComponent.scss'
 
 export function CartWidgetComponent () {
 

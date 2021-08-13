@@ -6,6 +6,7 @@ import {ItemListContainer} from './containers/ItemListContainer.jsx';
 import {ItemDetailContainer} from './containers/ItemDetailContainer.jsx';
 import {CartComponent} from './components/CartComponent.jsx';
 import {CartProvider} from './context/CartContext';
+import {FooterComponent} from './components/FooterComponent/Footer.jsx';
 
 function App() {
 
@@ -37,6 +38,8 @@ function App() {
             <Route path={"*"} component={()=> <h1> 404 </h1>} />
      
           </Switch>
+
+          <FooterComponent />
 
         </BrowserRouter>
 

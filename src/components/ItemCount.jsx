@@ -1,10 +1,10 @@
-import {useState, useContext, useEffect} from 'react'
+import {useState, useContext} from 'react'
 import './ItemCount.scss'
 import {CartContext} from '../context/CartContext'
 
 export function ItemCountComponent ({ stock, initial, producto}) {
     const [cantidad, setCantidad] = useState(initial);
-    const { addToCart, removeFromCart, getTotalQ  } = useContext(CartContext);
+    const { addToCart, removeFromCart } = useContext(CartContext);
 
     const id = producto.id;
     
@@ -24,6 +24,12 @@ export function ItemCountComponent ({ stock, initial, producto}) {
         }
     }
 
+    function agregar(){
+        if(cantidad > 0 ){
+            addToCart(producto, cantidad, id)
+        }
+    }
+
     function eliminar () {
         removeFromCart(id)
         setCantidad(0) 
@@ -38,7 +44,7 @@ export function ItemCountComponent ({ stock, initial, producto}) {
                 <button onClick={() => {validarCantidadSuma()}}>+</button>
             </div>
             <div className="cartCount">
-                <button onClick={() => {addToCart(producto, cantidad, id)}}>Agregar al Carrito</button>
+                <button onClick={() => {agregar()}}>Agregar al Carrito</button>
                 <button onClick={() => {eliminar()}}> Eliminar producto </button>
             </div>
             

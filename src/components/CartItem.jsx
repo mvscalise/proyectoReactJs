@@ -18,7 +18,6 @@ export const CartItem = ({producto}) => {
     }
 
     function validarResta(){
-        console.log(producto.cantidad)
         let resta = - 1
         let aux = cantidad + resta
         if (aux > 0){
@@ -37,11 +36,14 @@ export const CartItem = ({producto}) => {
         <section className="cartItem">
             
                 <h2> {producto.title}  </h2>
-                <img className="img" src={producto.img} alt='imagenDeProducto'/>
+                <img  src={producto.url} alt='imagenDeProducto'/>
                 <p> CLP $ {producto.price}</p>
-                <button onClick={() => {validarResta()}}>-</button>
-                <p>{cantidad}</p>
-                <button onClick={() => {validarSuma()}}>+</button>                        
+                <div>
+                    <button onClick={() => {validarResta()}}>-</button>
+                        <p>{cantidad}</p>
+                    <button onClick={() => {validarSuma()}}>+</button> 
+                </div>
+                                       
             
         </section> 
     )

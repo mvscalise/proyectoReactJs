@@ -1,0 +1,87 @@
+.footer {
+	display: flex;
+	flex-direction: column;
+	height: 20%;
+	color: #41584B;
+	font-size: 10px;
+    font-weight: bold;
+	background-color: #FF9B93;
+    margin-top: 10%;
+}
+
+.rrss {
+	display: grid;
+	background-color: #FF9B93;
+	grid-template-areas: 
+						"face insta mail";
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 100%; 
+	justify-items: center;
+	img {
+		width: 25%;
+        background-color: #FF9B93;
+	}
+    p{
+        background-color: #FF9B93;
+    }
+}
+
+
+@media (max-width: 780px) {
+    .footer{
+        margin-top: 30%;
+    }
+	.rrss {
+		display: grid;
+		background-color: #FF9B93;
+		grid-template-areas: 
+						"face"
+						"insta"
+						" mail";
+		grid-template-columns: 100%;
+		grid-template-rows: 1fr 1fr 1fr; 
+		justify-items: start;
+		padding-left: 10%;
+	}
+}
+
+%Ordenar {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	img{
+		width: 25%;
+		padding: 5%;
+	}
+	p{
+		padding-top: 5%;
+	}
+}
+
+.face {
+	grid-area: face;
+	@extend %Ordenar;
+    background-color: #FF9B93;
+}
+
+.insta {
+	grid-area: insta;
+	@extend %Ordenar;
+    background-color: #FF9B93;
+}
+
+.mail {
+	grid-area: mail;
+	@extend %Ordenar;
+    background-color: #FF9B93;
+}
+
+.derechos {
+	background-color: #FF9B93;
+	text-align: center;
+    p{
+        background-color: #FF9B93;
+    }
+}
+
