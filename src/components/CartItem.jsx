@@ -27,23 +27,20 @@ export const CartItem = ({producto}) => {
             removeFromCart(producto.id)
             setCantidad(0)
         }
-    }
-
-   
+    }  
 
     return(
         
         <section className="cartItem">
             
-                <h2> {producto.title}  </h2>
-                <img  src={producto.url} alt='imagenDeProducto'/>
-                <p> CLP $ {producto.price}</p>
-                <div>
-                    <button onClick={() => {validarResta()}}>-</button>
-                        <p>{cantidad}</p>
-                    <button onClick={() => {validarSuma()}}>+</button> 
-                </div>
-                                       
+            <h2> {producto.title}  </h2>
+            <img  src={producto.url} alt='imagenDeProducto'/>
+            <p> CLP $ {producto.price}</p>
+            <div>
+                <button onClick={() => {validarResta()}}>-</button>
+                    <p>{cantidad}</p>
+                <button onClick={() => {validarSuma()}}>+</button> 
+            </div>                         
             
         </section> 
     )

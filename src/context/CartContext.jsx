@@ -8,10 +8,10 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
  
     const [listProducts, setListProducts] =useState([]);
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
-    const [totalQty, setTotalQty ] = useState(0)
-    const [orderId, setOrderId] = useState ()
+    const [totalQty, setTotalQty ] = useState(0);
+    const [orderId, setOrderId] = useState ();
 
 /**
  * Con este UseEffect traemos unas sola vez nuestros productos de Firebase 
@@ -26,7 +26,7 @@ export const CartProvider = ({ children }) => {
             const aux = response.docs.map(element => {
                 return {id: element.id, ...element.data()}
             })
-            setListProducts(aux)
+            setListProducts(aux);
         } 
         getDataFromFirestore();
 
@@ -55,7 +55,7 @@ export const CartProvider = ({ children }) => {
  */
     function isInCart(id){
 
-        const item = cart.find(p => p.id === id)
+        const item = cart.find(p => p.id === id);
 
         if (item === undefined){
             return false
@@ -76,16 +76,16 @@ export const CartProvider = ({ children }) => {
 
          if (isInCart (id)){
 
-            const findProduct = cart.findIndex(e => e.id === id)
-            cart[findProduct].cantidad = cart[findProduct].cantidad + cantidad  
-            setCart(cart)  
+            const findProduct = cart.findIndex(e => e.id === id);
+            cart[findProduct].cantidad = cart[findProduct].cantidad + cantidad;  
+            setCart(cart);  
 
         } else {
 
             const nuevoProducto = { id: producto.id, title: producto.title, categoria: producto.categoria, price: producto.price,
-            descripcion: producto.descripcion, url: producto.url, available_quantity: producto.available_quantity, cantidad: producto.cantidad = cantidad}
-            const aux = [...cart, nuevoProducto]
-            setCart(aux) 
+            descripcion: producto.descripcion, url: producto.url, available_quantity: producto.available_quantity, cantidad: producto.cantidad = cantidad};
+            const aux = [...cart, nuevoProducto];
+            setCart(aux); 
 
         }    
 
@@ -98,19 +98,19 @@ export const CartProvider = ({ children }) => {
 * Funcion para eliminar el producto del carrito
 */
     function removeFromCart (id){
-        const newCart = cart.filter(product => product.id !== id)
-        setCart(newCart)
-        getTotalPrice ()
-        getTotalQ()
+        const newCart = cart.filter(product => product.id !== id);
+        setCart(newCart);
+        getTotalPrice ();
+        getTotalQ();
     }
 
 /**
 * Funcion para vaciar el carrito
 */ 
     function clearCart (){
-        setCart([])
-        getTotalPrice (0)
-        getTotalQ(0)
+        setCart([]);
+        getTotalPrice (0);
+        getTotalQ(0);
         localStorage.clear();
     }
 
@@ -121,7 +121,7 @@ export const CartProvider = ({ children }) => {
     function getTotalPrice (){
         
         const costoDelPedido = cart.reduce((prev, next) => prev + (next.price*next.cantidad), 0);        
-        setTotalPrice(costoDelPedido)
+        setTotalPrice(costoDelPedido);
     }
 
 /**
@@ -138,7 +138,7 @@ function getTotalQ() {
 */ 
 
 function whatsApp () {
-        window.location.href=`https://api.whatsapp.com/send/?phone=56945820564&text=Hola !!!, Vi tus productos y quiero hacer una consulta`    
+        window.location.href=`https://api.whatsapp.com/send/?phone=56945820564&text=Hola !!!, Vi tus productos y quiero hacer una consulta`;    
 }    
 
 
@@ -148,7 +148,6 @@ function actualizarStock(){
         let COLLECTION = DB.collection('misProductos').doc(element.id);
         let aux = element.available_quantity - element.cantidad;
         COLLECTION.update({available_quantity : aux});
-        console.log(element.available_quantity)
     })
 }
 

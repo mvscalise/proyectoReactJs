@@ -5,39 +5,34 @@ import {Link} from 'react-router-dom'
 
 export function ItemCountComponent ({ stock, initial, producto}) {
     const [cantidad, setCantidad] = useState(initial);
-    const [sendToCart, setSendToCart] = useState(false)
+    const [sendToCart, setSendToCart] = useState(false);
     const { addToCart, removeFromCart } = useContext(CartContext);
-
 
     const id = producto.id;
     
     function validarCantidadSuma (){
         if (cantidad < stock){
-            setCantidad(cantidad+1) 
-            console.log('Has agregado un producto')     
-        }else{
-            console.log('no hay stock')
+            setCantidad(cantidad+1);    
         }
     }
 
     function validarCantidadResta (){
         if (cantidad > 0){
-            setCantidad(cantidad-1) 
-            console.log('Has eliminado un producto')  
+            setCantidad(cantidad-1); 
         }
     }
 
     function agregar(){
         if(cantidad > 0 ){
-            addToCart(producto, cantidad, id)
-            setSendToCart(true)
+            addToCart(producto, cantidad, id);
+            setSendToCart(true);
         }
     }
 
     function eliminar () {
-        removeFromCart(id)
-        setCantidad(0) 
-        setSendToCart(false)
+        removeFromCart(id);
+        setCantidad(0); 
+        setSendToCart(false);
     }
  
 
@@ -45,7 +40,6 @@ export function ItemCountComponent ({ stock, initial, producto}) {
     return (
         <section id= 'contador'>
             <div className="cartCount">
-                <button onClick={() => {agregar()}}>Agregar al Carrito</button>
                 <button onClick={() => {eliminar()}}> Eliminar producto </button>
             </div>
             <div className="terminarCompra">

@@ -4,8 +4,7 @@ import './Item.scss'
 
 export const ItemComponent = ({id, name, precio, img }) => {
 
-    
-    return(
+     return(
         
         <div className ="card" >
             <h2> {name}  </h2>

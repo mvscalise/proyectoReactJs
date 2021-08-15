@@ -17,13 +17,12 @@ export function CartComponent () {
 
 
     async function generarPedido() {
-        const pedido = { buyer: {...form}, items:cart, total:totalPrice }
+        const pedido = { buyer: {...form}, items:cart, total:totalPrice };
         const DB = getFirestore();
         const COLLECTION = DB.collection('pedidoRecibido');
         const { id } = await COLLECTION.add(pedido);
-        console.log(id)
-        setOrderId(id)
-        setSendRequest(false)
+        setOrderId(id);
+        setSendRequest(false);
         setOrderTracking(true);
         actualizarStock();
     }
@@ -34,13 +33,13 @@ export function CartComponent () {
     };
 
     function finishBuying() {
-        clearCart()
-        setMensaje(true)   
+        clearCart();
+        setMensaje(true);   
     }
     
     function goMercadopago() {
-        enviarPedido()
-        setMensaje(true)
+        enviarPedido();
+        setMensaje(true);
     }
 
     if (mensaje){

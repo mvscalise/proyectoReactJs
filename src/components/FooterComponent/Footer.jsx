@@ -5,7 +5,6 @@ import Mail from './mail.png'
 
 export function FooterComponent () {
 
-  
     return(
         <section className="footer">
 

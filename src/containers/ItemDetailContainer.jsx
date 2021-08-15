@@ -14,7 +14,7 @@ export const ItemDetailContainer= () => {
     useEffect(()=>{
         if(id){
             let aux = CONTEXT.listProducts;
-            const seleccion = aux.find(producto => producto.id === id)
+            const seleccion = aux.find(producto => producto.id === id);
             setSelectProduct(seleccion);
         } 
     },[id, CONTEXT.listProducts])
@@ -22,7 +22,7 @@ export const ItemDetailContainer= () => {
 
     return (
         <div>
-            { selectProduct ? <ItemDetailComponent producto={selectProduct} /> : <h2>loading</h2> }
+            <ItemDetailComponent producto={selectProduct} />
         </div>
     )
 }

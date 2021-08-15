@@ -13,7 +13,7 @@ export const ItemListContainer = () => {
 
     useEffect(() => {
         if (id) {
-            const categoria = CONTEXT.listProducts.filter(producto => producto.categoria === id)
+            const categoria = CONTEXT.listProducts.filter(producto => producto.categoria === id);
             setShow(categoria);
         }else {
             setShow(CONTEXT.listProducts);
@@ -23,7 +23,7 @@ export const ItemListContainer = () => {
 
     return (
         <div>
-            {show.length > 0  ? <ItemListComponent productos= {show}/> : <img className = 'cargando' src={Loading} alt="cargando la pagina" /> }   
+            {show.length > 0  ? <ItemListComponent productos= {show}/> : <img className = 'cargando' src={Loading} alt="cargando la página" /> }   
         </div>
     )
 }

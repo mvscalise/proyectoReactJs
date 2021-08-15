@@ -4,7 +4,6 @@ import './ItemDetail.scss'
 
 export const ItemDetailComponent = ({producto}) => {
    
-  
     
     return(
         
