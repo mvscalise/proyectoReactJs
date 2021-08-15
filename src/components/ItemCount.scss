@@ -45,11 +45,22 @@
         font-weight: bold;
         border-radius: 8px;
         margin: 5%;
-        //margin-left: 10%;
-        //margin-right: 5%;
-       // margin-bottom: 10%;
     }
 }
     
+.terminarCompra{
+    align-self: center;
+    padding-left: 20%;;
+    button{
+        
+        font-weight: bold;
+        background-color: #FF9B93;
+        border-radius: 8px;
+        color:#41584B;
+        margin-left: 10%;
+    }
+}
 
-
+.terminarCompra:hover{
+    transform: scale(1.2); 
+}

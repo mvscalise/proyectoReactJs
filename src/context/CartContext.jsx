@@ -11,9 +11,8 @@ export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([])
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalQty, setTotalQty ] = useState(0)
+    const [orderId, setOrderId] = useState ()
 
-    const[orderId, setOrderId]= useState();
-        
 /**
  * Con este UseEffect traemos unas sola vez nuestros productos de Firebase 
  * y lo almacenamos en listProducts[] para usarlo en todos los componentes
@@ -36,7 +35,7 @@ export const CartProvider = ({ children }) => {
             setCart(JSON.parse(localStorage.getItem("carrito")));
         }
 
-    }, [])
+    }, [orderId])
 
 
 /**
@@ -134,24 +133,30 @@ function getTotalQ() {
     setTotalQty(cantidadTotal);
 }
 
+/**
+* Funcion para usar API whatsApp
+*/ 
 
 function whatsApp () {
         window.location.href=`https://api.whatsapp.com/send/?phone=56945820564&text=Hola !!!, Vi tus productos y quiero hacer una consulta`    
 }    
+
 
 function actualizarStock(){
     const DB = getFirestore();
     cart.forEach(element=>{
         let COLLECTION = DB.collection('misProductos').doc(element.id);
         let aux = element.available_quantity - element.cantidad;
-        COLLECTION.update({available_quantity : aux})
-        element.available_quantity = aux 
-        setCart(cart)
+        COLLECTION.update({available_quantity : aux});
+        console.log(element.available_quantity)
     })
 }
 
 
-// Aplicando MercadoPago
+/**
+* Funcion para realizar pago por Mercadopago,
+* se envia el carrtito de compras para generar el pago
+*/ 
 
 async function enviarPedido () {
     
@@ -179,12 +184,14 @@ async function enviarPedido () {
         });
         let responseMP = await data.json();
         window.open(responseMP.init_point, "ventana de pago");
-    } 
+    }
+    
+    clearCart();
 }
 
 
 
-return <CartContext.Provider value={{listProducts, cart, totalPrice, totalQty,setOrderId, clearCart, setListProducts, addToCart, removeFromCart, whatsApp, actualizarStock, enviarPedido}} >
+return <CartContext.Provider value={{listProducts, cart, totalPrice, totalQty, orderId, clearCart, setListProducts, addToCart, removeFromCart, whatsApp, actualizarStock, enviarPedido, setOrderId}} >
         {children}
 </CartContext.Provider>
 }

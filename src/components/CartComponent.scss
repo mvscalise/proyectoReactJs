@@ -30,21 +30,40 @@
     padding: 5px;
     font-weight: bold;
     color: #41584B;
-    border-color: #FFF3B2;
+    border-color: #FF9B93;
 }
 
+.enviarPedido{
+    align-self: center;
+    font-size: 18px;
+    background-color: #FF9B93;
+    border-radius: 10px;
+    padding: 5px;  
+    font-weight: bold;
+    color: #41584B;
+    border-color: #fccca9;
+}
+
+.enviarPedido:hover {
+    transform: scale(1.2); 
+    color: #fcd7ac;
+}
+   
 .whatsApp{
     align-self: flex-end;
     font-size: 18px;
     background-color: #FF9A00;
     border-radius: 10px;
     padding: 5px;
+    margin-right: 5%;
     font-weight: bold;
     border-color: #FFF3B2;
     color: #41584B;
 }
 
-
+.whatsApp:hover{
+    transform: scale(1.2);
+}
 
 .boton{
     font-size: 18px;
@@ -53,3 +72,54 @@
     border-color: #fccca9;
     color: #41584B;
 }
+
+.mensaje{
+    text-align: center;
+    h3{
+        color:#41584B;
+        font-size: 20px;
+    }
+    p{
+        margin-top: 10%;
+    }
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5%;
+    justify-content: center;
+    color:#41584B;
+    h2{
+        align-self: center;
+    }
+    input{
+        width: 50%;
+        align-self: center;
+    }
+    button{
+        width: 50%;
+        align-self:center;
+        font-weight: bold;
+        border-color: #FF9A00;
+    }
+}
+
+.formulario button:hover{
+    transform: scale(1.2); 
+    background-color: #FF9A00;
+}
+
+.elegirPago{
+    h2{
+        color:#41584B;
+        margin-bottom: 2%;
+    }
+    button{
+        font-weight: bold;
+        background-color: #FF9B93;
+        color:#41584B;
+        margin-left: 10%;
+    }
+}
+

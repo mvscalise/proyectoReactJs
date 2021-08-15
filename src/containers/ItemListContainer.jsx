@@ -1,4 +1,5 @@
 import './ItemListContainer.scss'
+import Loading from './perrito.png'
 import {useContext, useEffect, useState} from 'react'
 import {ItemListComponent} from '../components/ItemList.jsx'
 import {useParams} from 'react-router-dom'
@@ -22,7 +23,7 @@ export const ItemListContainer = () => {
 
     return (
         <div>
-            <ItemListComponent productos= {show}/>
+            {show.length > 0  ? <ItemListComponent productos= {show}/> : <img className = 'cargando' src={Loading} alt="cargando la pagina" /> }   
         </div>
     )
 }

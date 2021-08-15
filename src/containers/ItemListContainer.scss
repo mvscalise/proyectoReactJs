@@ -5,3 +5,20 @@ h2 {
 }
 
 
+.cargando{
+    width: 10%;
+    justify-content: center;   
+    animation-name: cargando;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+}
+
+@keyframes cargando {
+    from {
+      transform: rotateX(100deg);
+    }
+  
+    to {
+      margin-right: 0%;
+    }
+  }
