@@ -65,4 +65,4 @@ También se encuentran funciones para el uso de API (WhatsApp y Mercado Pago) y 
 Como esto forma parte un curso de React Js en este repo encontraras varias ramas donde cada una muestra el desarrollo del proyecto en todas sus etapas, el proyecto final lo puedes encontrar en la rama master, pero se mantienen sus versiones anteriores para muestra del proceso de desarrollo del código.
 
 ## Link de acceso 
-https://61198d484eba5fecb68e83df--cat-caffe.netlify.app/cart
+https://61198d484eba5fecb68e83df--cat-caffe.netlify.app/
